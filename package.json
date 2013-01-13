@@ -1,0 +1,19 @@
+{
+  "name": "music",
+  "version": "1.0.0",
+  "author": "Matt Bilker <me@mbilker.us>",
+  "description": "a music server with a REST api",
+  "bin": {
+    "music": "./music.js"
+  },
+  "main": "./music.js",
+  "dependencies" : {
+    "express": "3.0.6",
+    "cli-color": "0.3.1",
+    "lb-ratio": "0.3.10",
+    "node-ffprobe": "1.2.1"
+  },
+  "engines": {
+    "node": ">=0.6"
+  }
+}
