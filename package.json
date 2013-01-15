@@ -8,7 +8,7 @@
   },
   "main": "./music.js",
   "dependencies" : {
-    "express": "3.0.6",
+    "restify": "2.0.4",
     "cli-color": "0.2.1",
     "lb-ratio": "0.3.10",
     "node-ffprobe": "1.2.1"
