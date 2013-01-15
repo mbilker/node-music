@@ -2,7 +2,7 @@
 
 var net = require('net')
  
-var sock = net.connect(1337)
+var sock = net.connect(1337, '192.168.1.14')
  
 process.stdin.pipe(sock)
 sock.pipe(process.stdout)
