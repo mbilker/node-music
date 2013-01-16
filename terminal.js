@@ -12,7 +12,7 @@ sock.on('connect', function() {
   process.stdin.setRawMode(true)
 })
  
-sock.on('close', function() {
+sock.on('close', function done() {
   process.stdin.setRawMode(false)
   process.stdin.pause()
   sock.removeListener('close', done)
