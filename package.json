@@ -11,9 +11,11 @@
     "restify": "2.0.4",
     "cli-color": "0.2.1",
     "lb-ratio": "0.3.10",
-    "node-ffprobe": "1.2.1"
+    "node-ffprobe": "1.2.1",
+    "forever": "0.10.0",
+    "async": "0.1.22"
   },
   "engines": {
-    "node": ">=0.6"
+    "node": ">=0.8"
   }
 }
