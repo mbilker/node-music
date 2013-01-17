@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var forever = require('forever');
+
+forever.start('music', {
+  silent: false,
+  cwd: process.cwd(),
+  outFile: process.cwd() + '/out.log',
+  errFile: process.cwd() + '/err.log'
+});
