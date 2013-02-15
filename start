@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 
 var forever = require('forever');
+var music = '/music';
 
-forever.start('music', {
+forever.start('/music/music', {
+  max: 3,
   silent: false,
-  cwd: process.cwd(),
-  outFile: process.cwd() + '/out.log',
-  errFile: process.cwd() + '/err.log'
+  cwd: music,
+  outFile: music + '/out.log',
+  errFile: music + '/err.log'
 });

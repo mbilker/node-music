@@ -61,7 +61,7 @@ require('net').createServer(function(socket) {
     help: 'read server logs',
     action: function() {
       msgs.forEach(function(msg) {
-        socket.write('\u001b[1G' + msg);
+        socket.write('\u001b[1G' + msg + '\u001b[K');
       });
       this.displayPrompt();
     }
