@@ -33,7 +33,7 @@ require('net').createServer(function(socket) {
     useGlobal: false
   });
   var listener = function(msg) {
-    socket.write('\u001b[1G' + msg);
+    socket.write('\u001b[1G' + msg + '\u001b[K');
     r.displayPrompt();
   }
   music.emitter.on('log', listener);
