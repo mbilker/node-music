@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Player</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/json2.js"></script>
+  <script type="text/javascript" src="js/underscore-min.js"></script>
+  <script type="text/javascript" src="js/backbone-min.js"></script>
+  <script type="text/javascript" src="js/player.js"></script>
+</head>
+<body>
+
+<div class="player">
+  <h1>Music Player</h1>
+  <div id="music">
+    <p id="song"><i>Nothing is playing</i></p>
+    <p><a href="#" id="prev">Previous Song</a> | <a href="#" id="next">Next Song</a></p>
+    <audio id="audio" controls>
+      <source id="oggsource">
+Your browser does not support HTML5 audio.
+    </audio>
+  </div>
+  <ol id="songs"></ol>
+</div>
+
+<script type="text/template" id="artist-template">
+  <span class="artist"><%- artist %></span>
+  <ol class="albums">
+  </ol>
+</script>
+
+<script type="text/template" id="album-template">
+  <span class="album"><%- album %></span>
+  <ol class="tracks">
+  </ol>
+</script>
+
+<script type="text/template" id="song-template">
+  <a href="#" class="play">Play</a> - <%- title %>
+</script>
+
+</body>
+</html>

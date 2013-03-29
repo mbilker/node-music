@@ -1,0 +1,27 @@
+.player {
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	padding: 10px 15px;
+	width: 600px;
+	margin: auto auto;
+	p {
+		font: 12px monospace;
+		padding: 5px 0;
+		margin: 0;
+	}
+	h1, ol > li {
+		margin: 5px 0;
+		font-family: "Helvetica Neue", "Helvetica";
+	}
+	.albums { display: none; }
+	.tracks { display: none; }
+	.playing { font-weight: bolder; }
+	ol > li { font-size: 12px; }
+	h1 { font-size: 24px; }	
+	.play { font-size: 12px; }
+}
+#music {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	padding: 10px 15px;
+}
