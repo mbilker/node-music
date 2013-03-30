@@ -4,12 +4,9 @@ var Music = require('./lib/music');
 
 var music = new Music();
 
-var msgs = [];
-music.emitter.on('log', function(msg) {
-  msgs.push(msg);
+process.nextTick(function() {
+  music.start();
 });
-
-music.start();
 
 var inMusicContext = false;
 var origEval;
@@ -36,9 +33,7 @@ require('net').createServer(function(socket) {
     socket.write('\u001b[1G' + msg + '\u001b[K');
     r.displayPrompt();
   }
-  music.emitter.on('log', listener);
   r.on('exit', function() {
-    music.emitter.removeListener('log', listener);
     socket.end();
   });
   origEval = r.eval;
@@ -55,15 +50,6 @@ require('net').createServer(function(socket) {
         this.prompt = notInContext;
         this.displayPrompt();
       }
-    }
-  });
-  r.defineCommand('logs', {
-    help: 'read server logs',
-    action: function() {
-      msgs.forEach(function(msg) {
-        socket.write('\u001b[1G' + msg + '\u001b[K');
-      });
-      this.displayPrompt();
     }
   });
   r.context.music = music;

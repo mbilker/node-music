@@ -5,6 +5,10 @@ $(document).ready(function() {
   songplaying = $('#song');
   list = $('#songs');
 
+  _.templateSettings = {
+    interpolate: /\{\{(.+?)\}\}/g
+  };
+
   function songPlay(track) {
     if (track == null) return;
     $('.playing').removeClass('playing');
@@ -12,7 +16,7 @@ $(document).ready(function() {
       , artist = encodeURIComponent(track.get('artist'))
       , album = encodeURIComponent(track.get('album'))
       , title = encodeURIComponent(track.get('title'));
-    $("#oggsource").attr('src', '/musicm/get?artist=' + artist + '&album=' + album + '&title=' + title).detach().appendTo("#audio");
+    $("#oggsource").attr('src', base + 'get?artist=' + artist + '&album=' + album + '&title=' + title).detach().appendTo("#audio");
     player.track = track;
     player.trackView = track.get('view').$el;
     player.trackView.addClass('playing');
@@ -75,7 +79,7 @@ $(document).ready(function() {
 
   var ArtistList = Backbone.Collection.extend({
     model: Artist,
-    url: '/musicm/2/list'
+    url: base + 'list'
   });
 
   var SongView = Backbone.View.extend({
