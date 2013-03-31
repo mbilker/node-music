@@ -1,5 +1,6 @@
 node_modules
 archive
 bandwidth
+config.json
 cache.json
 *.log

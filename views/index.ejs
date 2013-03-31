@@ -17,12 +17,17 @@
 <div class="player">
   <h1>Music Player</h1>
   <div id="music">
-    <p id="song"><i>Nothing is playing</i></p>
-    <p><a href="#" id="prev">Previous Song</a> | <a href="#" id="next">Next Song</a></p>
-    <audio id="audio" controls>
-      <source id="oggsource">
+    <div>
+      <img id="albumArt" src="/img/noAlbumArt.png">
+    </div>
+    <div>
+      <p id="song"><i>Nothing is playing</i></p>
+      <p><a href="#" id="prev">Previous Song</a> | <a href="#" id="next">Next Song</a></p>
+      <audio id="audio" controls>
+        <source id="oggsource">
 Your browser does not support HTML5 audio.
-    </audio>
+      </audio>
+    </div>
   </div>
   <ol id="songs"></ol>
 </div>

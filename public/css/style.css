@@ -35,4 +35,10 @@
   background: rgba(0,0,0,0.2);
   border-radius: 3px;
   padding: 10px 15px;
+  height: 185px;
+}
+#music div {
+  padding: 3px;
+  position: relative;
+  float: left;
 }

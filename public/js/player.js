@@ -16,7 +16,17 @@ $(document).ready(function() {
       , artist = encodeURIComponent(track.get('artist'))
       , album = encodeURIComponent(track.get('album'))
       , title = encodeURIComponent(track.get('title'));
-    $("#oggsource").attr('src', base + 'get?artist=' + artist + '&album=' + album + '&title=' + title).detach().appendTo("#audio");
+    $('#oggsource').attr('src', base + 'get?artist=' + artist + '&album=' + album + '&title=' + title).detach().appendTo("#audio");
+    $.ajax({
+      type: 'GET',
+      url: base + 'art',
+      data: {
+        artist: track.get('artist'),
+        album: track.get('album')
+      }
+    }).done(function(data) {
+      $('#albumArt').attr('src', data);
+    });
     player.track = track;
     player.trackView = track.get('view').$el;
     player.trackView.addClass('playing');
